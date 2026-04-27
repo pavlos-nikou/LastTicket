@@ -1,0 +1,79 @@
+using UnityEngine;
+using TMPro;
+
+public class PaperInteract : MonoBehaviour
+{
+    public GameObject interactText;
+    public GameObject PaperText;
+
+    private bool playerNear = false;
+    private bool isOpen = false;
+
+    void Start()
+    {
+        interactText.SetActive(false);
+        PaperText.SetActive(false);
+
+    }
+
+    void Update()
+    {
+        if (playerNear && Input.GetKeyDown(KeyCode.E))
+        {
+            if (!isOpen)
+                OpenUI();
+        }
+        if (playerNear && Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isOpen)
+                CloseUI();
+        }
+    }
+
+    void OpenUI()
+    {
+        isOpen = true;
+        interactText.SetActive(false);
+        PaperText.SetActive(true);
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        Time.timeScale = 0f;
+    }
+
+    public void CloseUI()
+    {
+        isOpen = false;
+
+        interactText.SetActive(false);
+        PaperText.SetActive(false);
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+    }
+
+    // walk up to the computer text apears
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerNear = true;
+
+            if (!isOpen)
+                interactText.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerNear = false;
+            interactText.SetActive(false);
+
+            if (isOpen)
+                CloseUI();
+        }
+    }
+}
