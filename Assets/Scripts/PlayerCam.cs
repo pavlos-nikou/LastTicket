@@ -9,11 +9,11 @@ public class PlayerCam : MonoBehaviour
     public Transform orientation;
     float xRotation;
     float yRotation;
-    void Start()
-    {
-        Cursor.lockState = CursorLockMode. Locked;
-        Cursor.visible = false;
-    }
+    //void Start()
+    //{
+    //    Cursor.lockState = CursorLockMode. Locked;
+    //    Cursor.visible = false;
+    //}
 
     // Update is called once per frame
     void Update()
