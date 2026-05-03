@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 
 public class ComputerInteraction : MonoBehaviour
@@ -15,6 +16,12 @@ public class ComputerInteraction : MonoBehaviour
     public TMP_InputField passwordInput;
     public string correctPassword;
     public TMP_Text wrongPasswordText;
+    [Header("Act 3")]
+    public LampFlickerNoise[] lamps;
+    public Light printerSpotlight;
+    public AudioSource printerSound;
+    public GameObject printerNote;        // the note GameObject that appears
+    public float flickerDuration;
 
 
     void Start()
@@ -74,13 +81,13 @@ public class ComputerInteraction : MonoBehaviour
         Cursor.visible = false;
         Time.timeScale = 1f;
 
-
     }
 
     public bool IsPasswordCorrect()
     {
         return passwordInput.text == correctPassword;
     }
+
     // show desktop after sign in
     public void Login()
     {
@@ -92,11 +99,12 @@ public class ComputerInteraction : MonoBehaviour
             wrongPasswordText.gameObject.SetActive(false);
             signInCanvas.SetActive(false);
             desktopCanvas.SetActive(true);
+           
         }
         else
         {
             GameTracker.Instance.TrackPasswordAttempt(false);
-            
+
             Debug.Log("Wrong password");
             passwordInput.text = "";
             wrongPasswordText.gameObject.SetActive(true);
@@ -121,6 +129,10 @@ public class ComputerInteraction : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        if (isLoggedIn)
+        {
+            GameTracker.Instance.SendMessageToStory("VictimCompExit");
+        }
         if (other.CompareTag("Player"))
         {
             playerNear = false;
@@ -130,4 +142,6 @@ public class ComputerInteraction : MonoBehaviour
                 CloseUI();
         }
     }
+
+  
 }
