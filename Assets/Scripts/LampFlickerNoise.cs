@@ -15,6 +15,7 @@ public class LampFlickerNoise : MonoBehaviour
     void Start()
     {
         _light = GetComponent<Light>();
+        if (_light == null) Debug.LogWarning("LampFlickerNoise: No Light component found!", this);
 
         // Random seed so multiple lamps don't flicker in sync
         _seed = Random.Range(0f, 100f);
@@ -25,7 +26,7 @@ public class LampFlickerNoise : MonoBehaviour
         // Sample Perlin noise using time as input
         float noise = Mathf.PerlinNoise(_seed + Time.time * noiseSpeed, 0f);
 
-        // Map the 0–1 noise value to your intensity range
+        // Map the 0ï¿½1 noise value to your intensity range
         _light.intensity = Mathf.Lerp(minIntensity, maxIntensity, noise);
     }
 }

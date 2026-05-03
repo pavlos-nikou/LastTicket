@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
@@ -7,9 +8,12 @@ public class MainMenu : MonoBehaviour
     public GameObject signInCanvas;
     public GameObject desktopCanvas;
 
-    [Header("Popups")]
-    public RectTransform notificationPopup; // sliding popup
-    public GameObject openedPopup;          // instant popup (Raw Image)
+    [Header("Windows Popup")]
+    public RectTransform windowsPopup;
+    public GameObject itAppCanvas;
+
+    [Header("Player")]
+    public PlayerCam playerCam; // drag the PlayerCam GameObject here
 
     private Vector2 hiddenPos;
     private Vector2 shownPos;
@@ -17,32 +21,101 @@ public class MainMenu : MonoBehaviour
     private bool playerNear = true;
     private bool isOpen = true;
     private static bool isLoggedIn = false;
+    private static bool itAppWasOpen = false; // persists when player walks away
 
     private bool popupVisible = false;
+    private bool isSwitching = false;
 
     void Start()
     {
         interactText.SetActive(false);
-        signInCanvas.SetActive(true);
+        signInCanvas.SetActive(false);
         desktopCanvas.SetActive(false);
+        itAppCanvas.SetActive(false);
+        OpenUI(); // open the menu immediately for testing
 
-        shownPos = new Vector2(495, -260);
-        hiddenPos = new Vector2(750, -260);
+        shownPos = windowsPopup.anchoredPosition;
+        hiddenPos = new Vector2(shownPos.x + 600f, shownPos.y);
 
-        notificationPopup.anchoredPosition = hiddenPos;
-        notificationPopup.gameObject.SetActive(false);
+        windowsPopup.anchoredPosition = hiddenPos;
+        windowsPopup.gameObject.SetActive(false);
 
-        openedPopup.SetActive(false);
+        if (playerCam != null) playerCam.enabled = false;
+    }
+
+    void Update()
+    {
+        if (playerNear && Input.GetKeyDown(KeyCode.E))
+        {
+            if (!isOpen)
+                OpenUI();
+        }
+
+        if (playerNear && Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isOpen)
+                CloseUI();
+        }
+
+        if (popupVisible && !isSwitching && Input.GetMouseButtonDown(0))
+        {
+            isSwitching = true;
+            StartCoroutine(OpenItApp());
+        }
+    }
+
+    void OpenUI()
+    {
+        isOpen = true;
+        interactText.SetActive(false);
+
+        if (playerCam != null) playerCam.enabled = false; // fix issue 1
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0f;
+
+        if (isLoggedIn)
+        {
+            signInCanvas.SetActive(false);
+            desktopCanvas.SetActive(true);
+
+            // fix issue 3: restore ItApp if it was open before
+            if (itAppWasOpen)
+            {
+                itAppCanvas.SetActive(true);
+                windowsPopup.gameObject.SetActive(true);
+                windowsPopup.anchoredPosition = shownPos;
+                popupVisible = true;
+            }
+        }
+        else
+        {
+            signInCanvas.SetActive(true);
+            desktopCanvas.SetActive(false);
+        }
+    }
+
+    public void CloseUI()
+    {
+        isOpen = false;
+
+        signInCanvas.SetActive(false);
+        desktopCanvas.SetActive(false);
+
+        // don't hide itAppCanvas or popup — just hide the whole computer UI
+        // state is preserved in itAppWasOpen for when they return
+
+        if (playerCam != null) playerCam.enabled = true; // re-enable camera
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        Time.timeScale = 1f;
     }
 
     public void Login()
     {
         isLoggedIn = true;
-
         signInCanvas.SetActive(false);
         desktopCanvas.SetActive(true);
 
@@ -51,62 +124,66 @@ public class MainMenu : MonoBehaviour
 
     private IEnumerator ShowPopupAfterDelay()
     {
-        yield return new WaitForSecondsRealtime(15f);
+        yield return new WaitForSecondsRealtime(3f);
+
+        windowsPopup.gameObject.SetActive(true);
+        windowsPopup.anchoredPosition = hiddenPos;
+
+        yield return SlidePopup(hiddenPos, shownPos, 0.4f);
 
         popupVisible = true;
-        notificationPopup.gameObject.SetActive(true);
-        notificationPopup.anchoredPosition = hiddenPos;
-
-        float t = 0f;
-        float duration = 0.35f;
-
-        while (t < duration)
-        {
-            t += Time.unscaledDeltaTime;
-            float k = t / duration;
-
-            notificationPopup.anchoredPosition =
-                Vector2.Lerp(hiddenPos, shownPos, k);
-
-            yield return null;
-        }
-
-        notificationPopup.anchoredPosition = shownPos;
     }
 
-    void Update()
+    private IEnumerator OpenItApp()
     {
-        if (popupVisible && Input.GetMouseButtonDown(0))
-        {
-            StartCoroutine(SwitchToSecondPopup());
-        }
-    }
+        GameTracker.Instance.TrackInteraction("ItApp");
+        GameTracker.Instance.CompleteEvent("ItAppOpened");
 
-    private IEnumerator SwitchToSecondPopup()
-    {
         popupVisible = false;
+        itAppCanvas.SetActive(true);
+        itAppWasOpen = true;
+        isSwitching = false;
 
-        // slide OUT first popup
+        yield return null; // kept as coroutine in case you want to add entrance anim later
+    }
+
+    private IEnumerator SlidePopup(Vector2 from, Vector2 to, float duration)
+    {
         float t = 0f;
-        float duration = 0.25f;
-
-        Vector2 start = notificationPopup.anchoredPosition;
-
         while (t < duration)
         {
             t += Time.unscaledDeltaTime;
-            float k = t / duration;
-
-            notificationPopup.anchoredPosition =
-                Vector2.Lerp(start, hiddenPos, k);
-
+            float k = 1f - Mathf.Pow(1f - Mathf.Clamp01(t / duration), 3f);
+            windowsPopup.anchoredPosition = Vector2.Lerp(from, to, k);
             yield return null;
         }
-
-        notificationPopup.gameObject.SetActive(false);
-
-        // INSTANT second popup (NO animation)
-        openedPopup.SetActive(true);
+        windowsPopup.anchoredPosition = to;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerNear = true;
+            if (!isOpen)
+                interactText.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            playerNear = false;
+            interactText.SetActive(false);
+            if (isOpen)
+                CloseUI();
+        }
+    }
+
+    void OnDestroy()
+    {
+        isLoggedIn = false;
+        itAppWasOpen = false;
+    }
 }

@@ -14,12 +14,16 @@ public class ComputerInteraction : MonoBehaviour
 
     public TMP_InputField passwordInput;
     public string correctPassword;
+    public TMP_Text wrongPasswordText;
+
 
     void Start()
     {
         interactText.SetActive(false);
         signInCanvas.SetActive(false);
         desktopCanvas.SetActive(false);
+        wrongPasswordText.gameObject.SetActive(false);
+
     }
 
     void Update()
@@ -38,6 +42,8 @@ public class ComputerInteraction : MonoBehaviour
 
     void OpenUI()
     {
+        GameTracker.Instance.TrackInteraction("Computer");
+
         isOpen = true;
         interactText.SetActive(false);
 
@@ -67,6 +73,8 @@ public class ComputerInteraction : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1f;
+
+
     }
 
     public bool IsPasswordCorrect()
@@ -78,13 +86,21 @@ public class ComputerInteraction : MonoBehaviour
     {
         if (IsPasswordCorrect())
         {
+            GameTracker.Instance.TrackPasswordAttempt(true);
+
             isLoggedIn = true;
+            wrongPasswordText.gameObject.SetActive(false);
             signInCanvas.SetActive(false);
             desktopCanvas.SetActive(true);
         }
         else
         {
+            GameTracker.Instance.TrackPasswordAttempt(false);
+            
             Debug.Log("Wrong password");
+            passwordInput.text = "";
+            wrongPasswordText.gameObject.SetActive(true);
+            passwordInput.ActivateInputField();
         }
     }
 

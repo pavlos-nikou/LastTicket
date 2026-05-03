@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ToggleObject : MonoBehaviour
+public class ToggleApp : MonoBehaviour
 {
     public GameObject targetObject;
 

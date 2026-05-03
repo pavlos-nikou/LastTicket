@@ -1,5 +1,4 @@
 using UnityEngine;
-using TMPro;
 
 public class PaperInteract : MonoBehaviour
 {
@@ -32,6 +31,9 @@ public class PaperInteract : MonoBehaviour
 
     void OpenUI()
     {
+        GameTracker.Instance.TrackInteraction(gameObject.name); // uses the GameObject's name
+        GameTracker.Instance.DiscoverClue(gameObject.name);     // counts as finding a clue
+
         isOpen = true;
         interactText.SetActive(false);
         PaperText.SetActive(true);

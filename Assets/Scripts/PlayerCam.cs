@@ -1,11 +1,10 @@
-using System.Security.AccessControl;
 using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public float sensX;
-    public float sensY;
+    public float sensX = 100f;
+    public float sensY = 100f;
     public Transform orientation;
     float xRotation;
     float yRotation;
