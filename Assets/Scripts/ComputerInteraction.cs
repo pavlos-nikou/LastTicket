@@ -49,7 +49,6 @@ public class ComputerInteraction : MonoBehaviour
 
     void OpenUI()
     {
-        GameTracker.Instance.TrackInteraction("Computer");
 
         isOpen = true;
         interactText.SetActive(false);
@@ -99,7 +98,7 @@ public class ComputerInteraction : MonoBehaviour
             wrongPasswordText.gameObject.SetActive(false);
             signInCanvas.SetActive(false);
             desktopCanvas.SetActive(true);
-           
+
         }
         else
         {
@@ -131,7 +130,7 @@ public class ComputerInteraction : MonoBehaviour
     {
         if (isLoggedIn)
         {
-            GameTracker.Instance.SendMessageToStory("VictimCompExit");
+            GameTracker.Instance.SendMessageToStory("VictimCompLogin");
         }
         if (other.CompareTag("Player"))
         {
@@ -143,5 +142,5 @@ public class ComputerInteraction : MonoBehaviour
         }
     }
 
-  
+
 }

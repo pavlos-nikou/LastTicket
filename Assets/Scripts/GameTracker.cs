@@ -6,11 +6,14 @@ public class GameTracker : MonoBehaviour
     public static GameTracker Instance;
 
     public GameObject printerNote;
-    public float flickerDuration = 2f;
+    public float flickerDuration = 15f;
+    public AudioSource printerSound;
+    public GameObject printerSpotlight;
 
     private void Awake()
     {
-        Instance = this;
+        if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
+        else Destroy(gameObject);
     }
 
     public void TrackInteraction(string name) => Debug.Log("Interaction: " + name);
@@ -24,31 +27,28 @@ public class GameTracker : MonoBehaviour
         switch (message)
         {
             case "VictimCompLogin":
-                StartCoroutine(Act3Sequence());
+                StartCoroutine(PrintNote());
+                break;
+
+            case "PaperClueFound":
+                StartCoroutine(SpotlightStopFlicker());
                 break;
         }
+
     }
 
-    private IEnumerator Act3Sequence()
+    private IEnumerator PrintNote()
     {
-        Light printerSpotlight = GameObject.Find("PrinterSpotlight").GetComponent<Light>();
-        LampFlickerNoise[] lamps = FindObjectsByType<LampFlickerNoise>(FindObjectsSortMode.None);
-        AudioSource printerSound = GameObject.Find("PrinterSound").GetComponent<AudioSource>();
+        printerSound.Play();
+        printerSpotlight.SetActive(true);
+        yield return new WaitForSeconds(6f); // wait a frame for sound to start
+        printerNote.SetActive(true);
+    }
 
-        foreach (var lamp in lamps)
-            lamp.ForceFlicker(flickerDuration);
+    private IEnumerator SpotlightStopFlicker()
+    {
 
-        if (printerSound != null)
-            printerSound.Play();
-
-        yield return new WaitForSeconds(flickerDuration);
-
-        if (printerSpotlight != null)
-            printerSpotlight.enabled = true;
-
-        if (printerNote != null)
-            printerNote.SetActive(true);
-
-        CompleteEvent("Act3_PrinterTriggered");
+        printerSpotlight.SetActive(false);
+        yield return null;
     }
 }

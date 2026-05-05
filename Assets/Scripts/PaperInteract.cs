@@ -20,11 +20,15 @@ public class PaperInteract : MonoBehaviour
         if (playerNear && Input.GetKeyDown(KeyCode.E))
         {
             if (!isOpen)
+            {
                 OpenUI();
+            }
+
         }
         if (playerNear && Input.GetKeyDown(KeyCode.Escape))
         {
             if (isOpen)
+
                 CloseUI();
         }
     }
@@ -34,9 +38,12 @@ public class PaperInteract : MonoBehaviour
         GameTracker.Instance.TrackInteraction(gameObject.name); // uses the GameObject's name
         GameTracker.Instance.DiscoverClue(gameObject.name);     // counts as finding a clue
 
+        GameTracker.Instance.SendMessageToStory("PaperClueFound");
+
         isOpen = true;
         interactText.SetActive(false);
         PaperText.SetActive(true);
+        // PauseGame();
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

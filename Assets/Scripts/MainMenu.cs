@@ -136,6 +136,17 @@ public class MainMenu : MonoBehaviour
 
     private IEnumerator OpenItApp()
     {
+
+        if (GameTracker.Instance != null)
+        {
+            GameTracker.Instance.TrackInteraction("ItApp");
+            GameTracker.Instance.CompleteEvent("ItAppOpened");
+        }
+        else
+        {
+            Debug.LogWarning("GameTracker instance is null — skipping tracking.");
+        }
+        
         GameTracker.Instance.TrackInteraction("ItApp");
         GameTracker.Instance.CompleteEvent("ItAppOpened");
 
