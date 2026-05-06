@@ -20,11 +20,13 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (PauseMenu.IsPaused) return; 
         MyInput();
     }
 
     private void FixedUpdate()
     {
+        if (PauseMenu.IsPaused) return;
         MovePlayer();
     }
     private void MyInput()

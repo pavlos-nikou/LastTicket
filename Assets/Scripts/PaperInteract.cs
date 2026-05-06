@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PaperInteract : MonoBehaviour
@@ -17,12 +18,13 @@ public class PaperInteract : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.IsPaused) return; // ignore all input while paused
+
         if (playerNear && Input.GetKeyDown(KeyCode.E))
         {
             if (!isOpen)
-            {
                 OpenUI();
-            }
+
 
         }
         if (playerNear && Input.GetKeyDown(KeyCode.Escape))
@@ -35,6 +37,8 @@ public class PaperInteract : MonoBehaviour
 
     void OpenUI()
     {
+
+        PauseMenu.IsInteracting = true;
         GameTracker.Instance.TrackInteraction(gameObject.name); // uses the GameObject's name
         GameTracker.Instance.DiscoverClue(gameObject.name);     // counts as finding a clue
 
@@ -52,6 +56,7 @@ public class PaperInteract : MonoBehaviour
 
     public void CloseUI()
     {
+
         isOpen = false;
 
         interactText.SetActive(false);
@@ -60,6 +65,14 @@ public class PaperInteract : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1f;
+
+        StartCoroutine(ResetInteracting());
+    }
+
+    IEnumerator ResetInteracting()
+    {
+        yield return null; // wait one frame — pause menu misses it
+        PauseMenu.IsInteracting = false;
     }
 
     // walk up to the computer text apears

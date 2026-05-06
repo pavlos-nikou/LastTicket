@@ -35,6 +35,8 @@ public class ComputerInteraction : MonoBehaviour
 
     void Update()
     {
+        if (PauseMenu.IsPaused) return; // ignore all input while paused
+
         if (playerNear && Input.GetKeyDown(KeyCode.E))
         {
             if (!isOpen)
@@ -50,6 +52,7 @@ public class ComputerInteraction : MonoBehaviour
     void OpenUI()
     {
 
+        PauseMenu.IsInteracting = true;
         isOpen = true;
         interactText.SetActive(false);
 
@@ -71,6 +74,7 @@ public class ComputerInteraction : MonoBehaviour
 
     public void CloseUI()
     {
+
         isOpen = false;
 
         signInCanvas.SetActive(false);
@@ -80,6 +84,13 @@ public class ComputerInteraction : MonoBehaviour
         Cursor.visible = false;
         Time.timeScale = 1f;
 
+        StartCoroutine(ResetInteracting()); // delayed by one frame
+    }
+
+    IEnumerator ResetInteracting()
+    {
+        yield return null; // wait one frame — pause menu misses it
+        PauseMenu.IsInteracting = false;
     }
 
     public bool IsPasswordCorrect()

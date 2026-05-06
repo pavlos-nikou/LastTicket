@@ -66,10 +66,11 @@ public class MainMenu : MonoBehaviour
 
     void OpenUI()
     {
+        PauseMenu.IsInteracting = true;
         isOpen = true;
         interactText.SetActive(false);
 
-        if (playerCam != null) playerCam.enabled = false; // fix issue 1
+        if (playerCam != null) playerCam.enabled = false;
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -80,7 +81,7 @@ public class MainMenu : MonoBehaviour
             signInCanvas.SetActive(false);
             desktopCanvas.SetActive(true);
 
-            // fix issue 3: restore ItApp if it was open before
+            // restore ItApp if it was open before
             if (itAppWasOpen)
             {
                 itAppCanvas.SetActive(true);
@@ -111,6 +112,13 @@ public class MainMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         Time.timeScale = 1f;
+        StartCoroutine(ResetInteracting());
+    }
+
+    IEnumerator ResetInteracting() // ADD THIS WHOLE FUNCTION
+    {
+        yield return null;
+        PauseMenu.IsInteracting = false;
     }
 
     public void Login()
@@ -146,9 +154,9 @@ public class MainMenu : MonoBehaviour
         {
             Debug.LogWarning("GameTracker instance is null — skipping tracking.");
         }
-        
-        GameTracker.Instance.TrackInteraction("ItApp");
-        GameTracker.Instance.CompleteEvent("ItAppOpened");
+
+        // GameTracker.Instance.TrackInteraction("ItApp");
+        // GameTracker.Instance.CompleteEvent("ItAppOpened");
 
         popupVisible = false;
         itAppCanvas.SetActive(true);
