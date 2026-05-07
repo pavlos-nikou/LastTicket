@@ -1359,6 +1359,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.758
@@ -1486,6 +1490,10 @@ PrefabInstance:
     - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2250,6 +2258,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.758
@@ -2774,6 +2786,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeskDrawer (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7643
@@ -2941,6 +2957,10 @@ PrefabInstance:
     - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4179,6 +4199,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7643
@@ -4376,6 +4400,10 @@ PrefabInstance:
     - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4920,6 +4948,10 @@ PrefabInstance:
     - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5858,6 +5890,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7643
@@ -5929,6 +5965,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7643
@@ -5994,6 +6034,10 @@ PrefabInstance:
     - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6267,6 +6311,10 @@ PrefabInstance:
     - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_Name
       value: DeskDrawer (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6627,6 +6675,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3988631573785061172, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534324278901302601, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -6759,6 +6815,10 @@ PrefabInstance:
     - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7370,6 +7430,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.758
@@ -7557,6 +7621,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545693270}
   m_CullTransparentMesh: 1
+--- !u!1 &548243561 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+  m_PrefabInstance: {fileID: 804888914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &548306667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7632,6 +7701,10 @@ PrefabInstance:
     - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9079,6 +9152,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.758
@@ -9551,6 +9628,10 @@ PrefabInstance:
     - target: {fileID: 181755037849038213, guid: a1e0bacb14a760841bc72f24ddc9607e, type: 3}
       propertyPath: m_Name
       value: KillerMonitor
+      objectReference: {fileID: 0}
+    - target: {fileID: 181755037849038213, guid: a1e0bacb14a760841bc72f24ddc9607e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 181755037849038213, guid: a1e0bacb14a760841bc72f24ddc9607e, type: 3}
       propertyPath: m_TagString
@@ -10032,6 +10113,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.758
@@ -10152,6 +10237,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1200931393}
     m_Modifications:
+    - target: {fileID: 1351657793695412318, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 1426325298921093922, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
       propertyPath: m_Name
       value: DeskBase  (5)
@@ -10195,6 +10284,34 @@ PrefabInstance:
     - target: {fileID: 1765556060395430296, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252642392164531033, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986872765015437006, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988631573785061172, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471280498040892552, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486291904792956820, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534324278901302601, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625480026052441597, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10707,6 +10824,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeskDrawer (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.758
@@ -10750,13 +10871,30 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 804888918}
   m_SourcePrefab: {fileID: 100100000, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
 --- !u!4 &804888915 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
   m_PrefabInstance: {fileID: 804888914}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &804888918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 548243561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7c21ce3472a5f419ab837cff5a3e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slamDistance: 0.3
+  slamSpeed: 12
 --- !u!1 &810694903
 GameObject:
   m_ObjectHideFlags: 0
@@ -11368,6 +11506,10 @@ PrefabInstance:
     - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_Name
       value: DeskDrawer (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12784,6 +12926,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.2712
       objectReference: {fileID: 0}
+    - target: {fileID: 1351657793695412318, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 1426325298921093922, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
       propertyPath: m_Name
       value: DeskBase  (6)
@@ -12827,6 +12973,34 @@ PrefabInstance:
     - target: {fileID: 1765556060395430296, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252642392164531033, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986872765015437006, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988631573785061172, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471280498040892552, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486291904792956820, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534324278901302601, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625480026052441597, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
@@ -13731,6 +13905,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.758
@@ -14120,7 +14298,7 @@ MonoBehaviour:
   signInCanvas: {fileID: 1429423157}
   desktopCanvas: {fileID: 96979131}
   passwordInput: {fileID: 810694905}
-  correctPassword: ihatethisjob
+  correctPassword: 1
   wrongPasswordText: {fileID: 1251217885}
   lamps: []
   printerSpotlight: {fileID: 0}
@@ -14473,6 +14651,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeskDrawer (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.758
@@ -14570,7 +14752,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: ce903404ac269e6468450b1a7212a3c0, type: 3}
+  m_Resource: {fileID: 8300000, guid: f9926f3717d96aa4dbfddd381490a072, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -14581,7 +14763,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 25
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -15139,7 +15321,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.54999995, y: 0.4076336, z: 1.0894192}
   m_Center: {x: -0.00000004235544, y: -0.03881716, z: 0.5041741}
@@ -18601,6 +18783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeskDrawer (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.758
@@ -19755,6 +19941,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.758
@@ -20181,6 +20371,10 @@ PrefabInstance:
     - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_Name
       value: DeskDrawer (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21326,6 +21520,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7643
@@ -21507,6 +21705,10 @@ PrefabInstance:
     - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_Name
       value: DeskDrawer (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23036,6 +23238,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7643
@@ -23976,6 +24182,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7643
@@ -24733,6 +24943,10 @@ PrefabInstance:
     - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25736,6 +25950,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.7643
@@ -26480,6 +26698,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1200931393}
     m_Modifications:
+    - target: {fileID: 1351657793695412318, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     - target: {fileID: 1426325298921093922, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
       propertyPath: m_Name
       value: DeskBase  (7)
@@ -26523,6 +26745,34 @@ PrefabInstance:
     - target: {fileID: 1765556060395430296, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252642392164531033, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3986872765015437006, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 3988631573785061172, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471280498040892552, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 5486291904792956820, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 6534324278901302601, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7625480026052441597, guid: 907d7a608e001f14a89dc6c08a7f0a72, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26993,6 +27243,10 @@ PrefabInstance:
     - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27828,6 +28082,10 @@ PrefabInstance:
     - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5850318750933995909, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
+      propertyPath: m_TagString
+      value: drawer
       objectReference: {fileID: 0}
     - target: {fileID: 6519894241379486527, guid: 730de0a1c06a2b640bc3a93d2dd8eab5, type: 3}
       propertyPath: m_LocalPosition.x

@@ -11,6 +11,7 @@ TagManager:
   - Phone
   - Microwave
   - PrinterSpotlight
+  - drawer
   layers:
   - Default
   - TransparentFX

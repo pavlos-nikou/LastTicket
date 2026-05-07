@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class GameTracker : MonoBehaviour
@@ -28,10 +29,15 @@ public class GameTracker : MonoBehaviour
         {
             case "VictimCompLogin":
                 StartCoroutine(PrintNote());
+                // StartCoroutine(slamDeskDrawers());
                 break;
 
             case "PaperClueFound":
                 StartCoroutine(SpotlightStopFlicker());
+                GameObject[] KillerComputer = GameObject.FindGameObjectsWithTag("Computer_K");
+                KillerComputer[0].GetComponent<BoxCollider>().enabled = true;
+                break;
+            case "KillerCompInteractExit":
                 break;
         }
 
@@ -47,8 +53,15 @@ public class GameTracker : MonoBehaviour
 
     private IEnumerator SpotlightStopFlicker()
     {
-
         printerSpotlight.SetActive(false);
         yield return null;
     }
+    //     private IEnumerator slamDeskDrawers()
+    //     {
+    //         GameObject[] drawers = GameObject.FindGameObjectsWithTag("drawer");
+
+    //         drawers[0].GetComponent<DrawerSlam>().Slam();
+    //         yield return null;
+    //     }
 }
+

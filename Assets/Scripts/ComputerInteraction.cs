@@ -23,6 +23,9 @@ public class ComputerInteraction : MonoBehaviour
     public GameObject printerNote;        // the note GameObject that appears
     public float flickerDuration;
 
+    private bool happenOnceV =false;
+    private bool happenOnceK =false;
+
 
     void Start()
     {
@@ -141,7 +144,16 @@ public class ComputerInteraction : MonoBehaviour
     {
         if (isLoggedIn)
         {
-            GameTracker.Instance.SendMessageToStory("VictimCompLogin");
+            if (gameObject.name == "VictimMonitor" && happenOnceV == false)
+            {
+                GameTracker.Instance.SendMessageToStory("VictimCompLogin");
+                happenOnceV = true;
+            }
+            if (gameObject.name == "KillerMonitor" && happenOnceK == false)
+            {
+                GameTracker.Instance.SendMessageToStory("KillerCompInteractExit");
+                happenOnceK = true;
+            }
         }
         if (other.CompareTag("Player"))
         {
