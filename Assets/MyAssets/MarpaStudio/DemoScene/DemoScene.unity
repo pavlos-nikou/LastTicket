@@ -6099,7 +6099,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 53ee823ff543aa24d855d8f9f8c2b87b, type: 3}
       propertyPath: m_Name
-      value: phone
+      value: VictimPhone
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 53ee823ff543aa24d855d8f9f8c2b87b, type: 3}
       propertyPath: m_TagString
@@ -11476,7 +11476,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 0.9954673, z: 1.6639034}
   m_Center: {x: -0.0000024442052, y: -0.0022663523, z: 0.3319522}
@@ -22867,7 +22867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1664221063
 Transform:
   m_ObjectHideFlags: 0
