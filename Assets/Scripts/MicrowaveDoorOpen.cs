@@ -2,12 +2,9 @@ using UnityEngine;
 
 public class MicrowaveDoorOpen : MonoBehaviour
 {
-    [Header("Door Settings")]
     public Transform door;
 
-    [Tooltip("Negative opens opposite direction")]
-    public float openAngle = 0f;
-
+    public float openAngle = 90f;
     public float speed = 2f;
 
     private bool isOpen = false;
@@ -17,24 +14,16 @@ public class MicrowaveDoorOpen : MonoBehaviour
 
     void Start()
     {
-        // Save the closed rotation
         closedRotation = door.localRotation;
 
-        // Create the open rotation
-        // Change axis here if needed
-        openRotation = closedRotation * Quaternion.Euler(0, openAngle, 0);
+        openRotation =
+            closedRotation * Quaternion.Euler(0, openAngle, 0);
     }
 
     void Update()
     {
-        // TEST KEY
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            ToggleDoor();
-        }
-
-        // Smoothly rotate door
-        Quaternion targetRotation = isOpen ? openRotation : closedRotation;
+        Quaternion targetRotation =
+            isOpen ? openRotation : closedRotation;
 
         door.localRotation = Quaternion.Lerp(
             door.localRotation,
@@ -43,8 +32,11 @@ public class MicrowaveDoorOpen : MonoBehaviour
         );
     }
 
-    public void ToggleDoor()
+    private void OnTriggerEnter(Collider other)
     {
-        isOpen = !isOpen;
+        if (other.CompareTag("Player"))
+        {
+            isOpen = true;
+        }
     }
 }
