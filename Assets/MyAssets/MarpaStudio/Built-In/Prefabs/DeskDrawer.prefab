@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.7643
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.11109996
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.296
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26,15 +26,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -49,15 +49,42 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: a671b091bf30d544f812f806e34c3285, type: 2}
     - target: {fileID: 919132149155446097, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_Name
       value: DeskDrawer
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
+      propertyPath: m_TagString
+      value: drawer
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3692716093581702936}
   m_SourcePrefab: {fileID: 100100000, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
+--- !u!1 &5850318750933995909 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
+  m_PrefabInstance: {fileID: 6769447049515986132}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3692716093581702936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5850318750933995909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7c21ce3472a5f419ab837cff5a3e7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slamDistance: 0.5
+  openSpeed: 1
+  slamSpeed: 10

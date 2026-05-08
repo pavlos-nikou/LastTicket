@@ -29,11 +29,12 @@ public class GameTracker : MonoBehaviour
         {
             case "VictimCompLogin":
                 StartCoroutine(PrintNote());
-                // StartCoroutine(slamDeskDrawers());
+                StartCoroutine(slamDeskDrawers());
                 break;
 
             case "PaperClueFound":
                 StartCoroutine(SpotlightStopFlicker());
+                StartCoroutine(slamDeskDrawersStop());
                 GameObject[] KillerComputer = GameObject.FindGameObjectsWithTag("Computer_K");
                 KillerComputer[0].GetComponent<BoxCollider>().enabled = true;
                 break;
@@ -56,12 +57,23 @@ public class GameTracker : MonoBehaviour
         printerSpotlight.SetActive(false);
         yield return null;
     }
-    //     private IEnumerator slamDeskDrawers()
-    //     {
-    //         GameObject[] drawers = GameObject.FindGameObjectsWithTag("drawer");
-
-    //         drawers[0].GetComponent<DrawerSlam>().Slam();
-    //         yield return null;
-    //     }
+    private IEnumerator slamDeskDrawers()
+    {
+        GameObject[] Drawers = GameObject.FindGameObjectsWithTag("drawer");
+        foreach (GameObject Drawer in Drawers)
+        {
+            Drawer.GetComponent<DrawerSlam>().StartSlamming();
+        }
+        yield return null;
+    }
+    private IEnumerator slamDeskDrawersStop()
+    {
+        GameObject[] Drawers = GameObject.FindGameObjectsWithTag("drawer");
+        foreach (GameObject Drawer in Drawers)
+        {
+            Drawer.GetComponent<DrawerSlam>().StopSlamming();
+        }
+        yield return null;
+    }
 }
 
