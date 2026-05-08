@@ -4,7 +4,7 @@ using UnityEngine;
 public class DrawerSlam : MonoBehaviour
 {
     public float slamDistance = 0.3f;
-    public float slamSpeed = 12f;
+    public float slamSpeed = 15f;
 
     private Vector3 startPos;
 
