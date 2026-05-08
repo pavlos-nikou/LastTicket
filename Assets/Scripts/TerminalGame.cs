@@ -304,14 +304,35 @@ public class TerminalGame : MonoBehaviour
     {
         if (gameOver) return;
         Log(">>" + word);
+
         if (word == password) { Log("Exact match!"); Log("PASSWORD ACCEPTED."); gameOver = true; return; }
+
         int like = Likeness(word, password);
         attemptsLeft--;
         Log("Entry denied.");
         Log("Likeness=" + like + "/" + wordLength);
+
+        // New: show which characters are correct in-place.
+        // Builds a simple per-position display like "A _ R _ T" where underscores are incorrect characters.
+        string posInfo = BuildPositionInfo(word, password);
+        Log("Correct chars: " + posInfo);
+
         Log(AttemptBar());
         Log("");
         if (attemptsLeft <= 0) { Log("TERMINAL LOCKED."); Log("Password was: " + password); gameOver = true; }
+    }
+
+    // Returns a spaced string showing correct letters in their positions and '_' for incorrect ones.
+    static string BuildPositionInfo(string guess, string actual)
+    {
+        int len = Mathf.Min(guess.Length, actual.Length);
+        List<string> parts = new List<string>(len);
+        for (int i = 0; i < len; i++)
+        {
+            if (guess[i] == actual[i]) parts.Add(guess[i].ToString());
+            else parts.Add("_");
+        }
+        return string.Join(" ", parts);
     }
 
     void ActivateBracket(int bi)
