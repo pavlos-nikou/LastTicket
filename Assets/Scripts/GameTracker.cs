@@ -10,7 +10,7 @@ public class GameTracker : MonoBehaviour
     public float flickerDuration = 15f;
     public AudioSource printerSound;
     public GameObject printerSpotlight;
-
+    //github is the worst
     private void Awake()
     {
         if (Instance == null) { Instance = this; DontDestroyOnLoad(gameObject); }
