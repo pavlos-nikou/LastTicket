@@ -39,6 +39,11 @@ public class GameTracker : MonoBehaviour
                 KillerComputer[0].GetComponent<BoxCollider>().enabled = true;
                 break;
             case "KillerCompInteractExit":
+                GameObject[] Microwave = GameObject.FindGameObjectsWithTag("Microwave");
+                Microwave[0].GetComponent<AudioSource>().Play();
+                GameObject[] ItLamp = GameObject.FindGameObjectsWithTag("ItLamp");
+                ItLamp[0].SetActive(false);
+
                 break;
         }
 

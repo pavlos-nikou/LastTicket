@@ -12,6 +12,7 @@ TagManager:
   - Microwave
   - PrinterSpotlight
   - drawer
+  - ItLamp
   layers:
   - Default
   - TransparentFX

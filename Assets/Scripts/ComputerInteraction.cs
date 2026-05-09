@@ -115,6 +115,8 @@ public class ComputerInteraction : MonoBehaviour
             desktopCanvas.SetActive(true);
             if (gameObject.name == "KillerMonitor" && happenOnceK == false)
             {
+                
+                happenOnceK = true;
                 StartCoroutine(ExitRandomly());
             }
 
@@ -158,11 +160,7 @@ public class ComputerInteraction : MonoBehaviour
                 GameTracker.Instance.SendMessageToStory("VictimCompLogin");
                 happenOnceV = true;
             }
-            if (gameObject.name == "KillerMonitor" && happenOnceK == false)
-            {
-                GameTracker.Instance.SendMessageToStory("KillerCompInteractExit");
-                happenOnceK = true;
-            }
+          
         }
         if (other.CompareTag("Player"))
         {
@@ -177,6 +175,7 @@ public class ComputerInteraction : MonoBehaviour
     private IEnumerator ExitRandomly()
     {
         yield return new WaitForSecondsRealtime(6f);
+        GameTracker.Instance.SendMessageToStory("KillerCompInteractExit");
         CloseUI();
     }
 }
