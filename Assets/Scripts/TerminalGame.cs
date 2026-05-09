@@ -312,7 +312,6 @@ public class TerminalGame : MonoBehaviour
         Log("Entry denied.");
         Log("Likeness=" + like + "/" + wordLength);
 
-        // New: show which characters are correct in-place.
         // Builds a simple per-position display like "A _ R _ T" where underscores are incorrect characters.
         string posInfo = BuildPositionInfo(word, password);
         Log("Correct chars: " + posInfo);
