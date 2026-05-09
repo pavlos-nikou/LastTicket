@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static System.Net.Mime.MediaTypeNames;
+
 
 public class TerminalGame : MonoBehaviour
 {
@@ -25,6 +25,8 @@ public class TerminalGame : MonoBehaviour
     GUIStyle termStyle, dimStyle, brightStyle, hoverStyle, btnStyle, logStyle, titleStyle;
     bool stylesReady = false;
     int lastW, lastH;
+
+    [SerializeField] GameObject terminalRoot;
 
     static readonly string[] Words5 = {
         "ABORT","ADMIN","AGENT","ALERT","ALIGN","ALLOY","ALTER","ANNEX",
@@ -54,7 +56,6 @@ public class TerminalGame : MonoBehaviour
     const string NOISE = "!@#$%^&*-+=|<>?/\\~`{}[];:',. ";
     const int GRID_LEN = 680;
 
-    // Scale relative to 1920x1080
     float SW => Screen.width;
     float SH => Screen.height;
     float Sx(float v) => v * (SW / 1920f);
@@ -62,6 +63,18 @@ public class TerminalGame : MonoBehaviour
     int Si(float v) => Mathf.Max(1, Mathf.RoundToInt(v * (SH / 1080f)));
 
     void Start() => NewGame();
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+            ExitTerminal();
+    }
+
+    void ExitTerminal()
+    {
+        if (terminalRoot != null)
+            terminalRoot.SetActive(false);
+    }
 
     public void NewGame()
     {
@@ -135,18 +148,14 @@ public class TerminalGame : MonoBehaviour
 
         float sw = SW, sh = SH;
 
-
         GUI.color = Color.black;
         GUI.DrawTexture(new Rect(0, 0, sw, sh), Texture2D.whiteTexture);
         GUI.color = Color.white;
 
         float padX = Sx(30f);
-        float padY = Sy(20f);
         float topH = Sy(110f);
         float gridY = topH + Sy(8f);
         float gridH = sh - gridY - Sy(20f);
-
-
         float gridW = sw * 0.62f;
         float divX = gridW;
         float logX = divX + Sx(16f);
@@ -155,7 +164,12 @@ public class TerminalGame : MonoBehaviour
         GUI.Label(new Rect(padX, Sy(44f), sw * 0.7f, Sy(28f)), "ENTER PASSWORD NOW", brightStyle);
         GUI.Label(new Rect(padX, Sy(76f), sw * 0.7f, Sy(28f)), AttemptBar(), attemptsLeft <= 1 ? hoverStyle : termStyle);
 
-        //Buttons (top-right) 
+        // ESC hint (top left)
+        GUIStyle escStyle = new GUIStyle(dimStyle);
+        escStyle.fontSize = Si(13f);
+        GUI.Label(new Rect(padX, Sy(12f), Sx(300f), Sy(24f)), "[ ESC ] EXIT TERMINAL", escStyle);
+
+        // Buttons (top-right)
         float bh = Sy(32f);
         float bby = Sy(12f);
         float bx0 = sw - Sx(460f);
@@ -163,13 +177,13 @@ public class TerminalGame : MonoBehaviour
         if (GUI.Button(new Rect(bx0 + Sx(96f), bby, Sx(105f), bh), "NORMAL", btnStyle)) { wordLength = 5; NewGame(); }
         if (GUI.Button(new Rect(bx0 + Sx(207f), bby, Sx(90f), bh), "HARD", btnStyle)) { wordLength = 7; NewGame(); }
         if (GUI.Button(new Rect(bx0 + Sx(303f), bby, Sx(130f), bh), "NEW GAME", btnStyle)) { NewGame(); }
-       
-        //Separator 
+
+        // Separator
         GUI.color = new Color(0f, 0.55f, 0.1f, 0.55f);
         GUI.DrawTexture(new Rect(padX, topH, sw - padX * 2f, 1f), Texture2D.whiteTexture);
         GUI.color = Color.white;
 
-        //Game Over
+        // Game Over
         if (gameOver)
         {
             bool won = logText.Contains("ACCEPTED");
@@ -179,14 +193,12 @@ public class TerminalGame : MonoBehaviour
             big.fontSize = Si(64f);
             big.normal.textColor = c;
 
-            // Center the message on screen
             GUIContent content = new GUIContent(msg);
             Vector2 size = big.CalcSize(content);
             float msgX = (sw - size.x) * 0.5f;
             float msgY = (sh * 0.42f) - (size.y * 0.5f);
             GUI.Label(new Rect(msgX, msgY, size.x, size.y), msg, big);
 
-            // For the locked case show a centered Try Again button beneath the message
             if (!won)
             {
                 float btnW = Sx(300f);
@@ -196,40 +208,27 @@ public class TerminalGame : MonoBehaviour
                 if (GUI.Button(new Rect(btnX, btnY, btnW, btnH), "[ TRY AGAIN ]", btnStyle))
                     NewGame();
             }
-            else
-            {
-                // When the player wins, show an Exit button centered beneath the message
-                float btnW = Sx(300f);
-                float btnH = Sy(52f);
-                float btnX = (sw - btnW) * 0.5f;
-                float btnY = msgY + size.y + Sy(24f);
-                if (GUI.Button(new Rect(btnX, btnY, btnW, btnH), "[ EXIT ]", btnStyle))
-                    ExitGame();
-            }
-
             return;
         }
 
-        //Grid (left)
+        // Grid (left)
         DrawGrid(new Rect(padX, gridY, gridW - padX, gridH));
 
-        //Vertical divider
+        // Vertical divider
         GUI.color = new Color(0f, 0.55f, 0.1f, 0.45f);
         GUI.DrawTexture(new Rect(divX, gridY, 1f, gridH), Texture2D.whiteTexture);
         GUI.color = Color.white;
 
-        //Log (right)
+        // Log (right)
         GUI.Label(new Rect(logX, gridY, logW, gridH), logText, logStyle);
     }
 
     void DrawGrid(Rect area)
     {
-        // Fixed values tuned for 1920x1080; scale with screen
         float rowH = Sy(24f);
         float addrW = Sx(80f);
         float charW = Sx(12.2f);
 
-        // Two equal columns inside the grid area
         float halfW = area.width / 2f;
         float charsSpace = halfW - addrW;
         int charsPerRow = Mathf.Max(8, Mathf.FloorToInt(charsSpace / charW));
@@ -249,7 +248,6 @@ public class TerminalGame : MonoBehaviour
 
             if (ry > area.y + area.height) continue;
 
-            // Address label
             int addr = 0xF4A0 + row * 12;
             GUI.Label(new Rect(colX, ry, addrW, rowH), "0x" + addr.ToString("X4"), dimStyle);
             float rx = colX + addrW;
@@ -260,7 +258,6 @@ public class TerminalGame : MonoBehaviour
 
             while (i < endChar)
             {
-                // Word?
                 int wi = GetWordAt(i);
                 if (wi >= 0 && !removedDuds.Contains(words[wi]))
                 {
@@ -275,7 +272,6 @@ public class TerminalGame : MonoBehaviour
                     continue;
                 }
 
-                // Bracket pair?
                 int bi = bracketOpen.IndexOf(i);
                 if (bi >= 0 && bracketOpen[bi] != -1)
                 {
@@ -296,7 +292,6 @@ public class TerminalGame : MonoBehaviour
                     }
                 }
 
-                // Removed dud?
                 int ri = GetRemovedDudAt(i);
                 if (ri >= 0)
                 {
@@ -306,7 +301,6 @@ public class TerminalGame : MonoBehaviour
                     continue;
                 }
 
-                // Noise
                 GUI.Label(new Rect(rx, ry, charW, rowH), grid[i].ToString(), dimStyle);
                 rx += charW; i++;
             }
@@ -332,10 +326,10 @@ public class TerminalGame : MonoBehaviour
         if (gameOver) return;
         Log(">>" + word);
 
-        if (word == password) 
-        { 
+        if (word == password)
+        {
             Log("Exact match!"); Log("PASSWORD ACCEPTED."); gameOver = true;
-            return; 
+            return;
         }
 
         int like = Likeness(word, password);
@@ -343,8 +337,6 @@ public class TerminalGame : MonoBehaviour
         Log("Entry denied.");
         Log("Likeness=" + like + "/" + wordLength);
 
-        // New: show which characters are correct in-place.
-        // Builds a simple per-position display like "A _ R _ T" where underscores are incorrect characters.
         string posInfo = BuildPositionInfo(word, password);
         Log("Correct chars: " + posInfo);
 
@@ -353,16 +345,12 @@ public class TerminalGame : MonoBehaviour
         if (attemptsLeft <= 0) { Log("TERMINAL LOCKED."); Log("Password was: " + password); gameOver = true; }
     }
 
-    // Returns a spaced string showing correct letters in their positions and '_' for incorrect ones.
     static string BuildPositionInfo(string guess, string actual)
     {
         int len = Mathf.Min(guess.Length, actual.Length);
         List<string> parts = new List<string>(len);
         for (int i = 0; i < len; i++)
-        {
-            if (guess[i] == actual[i]) parts.Add(guess[i].ToString());
-            else parts.Add("_");
-        }
+            parts.Add(guess[i] == actual[i] ? guess[i].ToString() : "_");
         return string.Join(" ", parts);
     }
 
