@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using static System.Net.Mime.MediaTypeNames;
 
 public class TerminalGame : MonoBehaviour
 {
@@ -62,7 +63,7 @@ public class TerminalGame : MonoBehaviour
 
     void Start() => NewGame();
 
-    void NewGame()
+    public void NewGame()
     {
         gameOver = false;
         attemptsLeft = maxAttempts;
@@ -162,7 +163,7 @@ public class TerminalGame : MonoBehaviour
         if (GUI.Button(new Rect(bx0 + Sx(96f), bby, Sx(105f), bh), "NORMAL", btnStyle)) { wordLength = 5; NewGame(); }
         if (GUI.Button(new Rect(bx0 + Sx(207f), bby, Sx(90f), bh), "HARD", btnStyle)) { wordLength = 7; NewGame(); }
         if (GUI.Button(new Rect(bx0 + Sx(303f), bby, Sx(130f), bh), "NEW GAME", btnStyle)) { NewGame(); }
-
+       
         //Separator 
         GUI.color = new Color(0f, 0.55f, 0.1f, 0.55f);
         GUI.DrawTexture(new Rect(padX, topH, sw - padX * 2f, 1f), Texture2D.whiteTexture);
@@ -173,13 +174,39 @@ public class TerminalGame : MonoBehaviour
         {
             bool won = logText.Contains("ACCEPTED");
             Color c = won ? new Color(0f, 1f, 0.3f) : new Color(1f, 0.15f, 0.05f);
-            string msg = won ? "ACCESS GRANTED" : "TERMINAL LOCKED";
+            string msg = won ? "PASSWORD: giorkos04 (esc to exit)" : "TERMINAL LOCKED";
             GUIStyle big = new GUIStyle(titleStyle);
             big.fontSize = Si(64f);
             big.normal.textColor = c;
-            GUI.Label(new Rect(sw * 0.15f, sh * 0.4f, sw * 0.7f, Sy(80f)), msg, big);
-            if (GUI.Button(new Rect(sw / 2f - Sx(150f), sh * 0.58f, Sx(300f), Sy(52f)), "[ TRY AGAIN ]", btnStyle))
-                NewGame();
+
+            // Center the message on screen
+            GUIContent content = new GUIContent(msg);
+            Vector2 size = big.CalcSize(content);
+            float msgX = (sw - size.x) * 0.5f;
+            float msgY = (sh * 0.42f) - (size.y * 0.5f);
+            GUI.Label(new Rect(msgX, msgY, size.x, size.y), msg, big);
+
+            // For the locked case show a centered Try Again button beneath the message
+            if (!won)
+            {
+                float btnW = Sx(300f);
+                float btnH = Sy(52f);
+                float btnX = (sw - btnW) * 0.5f;
+                float btnY = msgY + size.y + Sy(24f);
+                if (GUI.Button(new Rect(btnX, btnY, btnW, btnH), "[ TRY AGAIN ]", btnStyle))
+                    NewGame();
+            }
+            else
+            {
+                // When the player wins, show an Exit button centered beneath the message
+                float btnW = Sx(300f);
+                float btnH = Sy(52f);
+                float btnX = (sw - btnW) * 0.5f;
+                float btnY = msgY + size.y + Sy(24f);
+                if (GUI.Button(new Rect(btnX, btnY, btnW, btnH), "[ EXIT ]", btnStyle))
+                    ExitGame();
+            }
+
             return;
         }
 
@@ -305,7 +332,11 @@ public class TerminalGame : MonoBehaviour
         if (gameOver) return;
         Log(">>" + word);
 
-        if (word == password) { Log("Exact match!"); Log("PASSWORD ACCEPTED."); gameOver = true; return; }
+        if (word == password) 
+        { 
+            Log("Exact match!"); Log("PASSWORD ACCEPTED."); gameOver = true;
+            return; 
+        }
 
         int like = Likeness(word, password);
         attemptsLeft--;

@@ -1,18 +1,19 @@
 using UnityEngine;
 using TMPro;
 using System.Collections;
-
+using static TerminalGame;
 
 public class ComputerInteraction : MonoBehaviour
 {
     public GameObject interactText;
     public GameObject signInCanvas;
     public GameObject desktopCanvas;
+    public GameObject hackingMinigame;
 
     private bool playerNear = false;
     private bool isOpen = false;
-    private static bool isLoggedIn = false;
-
+    private bool isLoggedIn = false;
+ 
     public TMP_InputField passwordInput;
     public string correctPassword;
     public TMP_Text wrongPasswordText;
@@ -125,7 +126,11 @@ public class ComputerInteraction : MonoBehaviour
         }
     }
 
-
+    public void startGame()
+    {
+        hackingMinigame.SetActive(true);
+        signInCanvas.SetActive(false);
+    }
 
 
     // walk up to the computer text apears
