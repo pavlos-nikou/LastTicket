@@ -113,6 +113,10 @@ public class ComputerInteraction : MonoBehaviour
             wrongPasswordText.gameObject.SetActive(false);
             signInCanvas.SetActive(false);
             desktopCanvas.SetActive(true);
+            if (gameObject.name == "KillerMonitor" && happenOnceK == false)
+            {
+                StartCoroutine(ExitRandomly());
+            }
 
         }
         else
@@ -170,5 +174,9 @@ public class ComputerInteraction : MonoBehaviour
         }
     }
 
-
+    private IEnumerator ExitRandomly()
+    {
+        yield return new WaitForSecondsRealtime(6f);
+        CloseUI();
+    }
 }
