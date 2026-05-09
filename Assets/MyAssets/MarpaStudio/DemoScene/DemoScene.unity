@@ -9309,7 +9309,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &579882643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18097,7 +18097,7 @@ MonoBehaviour:
   interactText: {fileID: 1669407475}
   signInCanvas: {fileID: 1251860443}
   desktopCanvas: {fileID: 339909524}
-  hackingMinigame: {fileID: 0}
+  hackingMinigame: {fileID: 579882642}
   passwordInput: {fileID: 1948728696}
   correctPassword: giorkos04
   wrongPasswordText: {fileID: 1567849433}
