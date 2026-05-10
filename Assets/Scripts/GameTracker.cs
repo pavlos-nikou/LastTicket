@@ -42,6 +42,8 @@ public class GameTracker : MonoBehaviour
                 GameObject[] Microwave = GameObject.FindGameObjectsWithTag("Microwave");
                 Microwave[0].GetComponent<AudioSource>().Play();
                 GameObject[] ItLamp = GameObject.FindGameObjectsWithTag("ItLamp");
+                GameObject[] MicrowaveLightTrigger = GameObject.FindGameObjectsWithTag("MicrowaveLightTrigger");
+                MicrowaveLightTrigger[0].GetComponent<BoxCollider>().enabled = true;
                 ItLamp[0].SetActive(false);
 
                 break;
