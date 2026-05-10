@@ -64,6 +64,8 @@ public class GameTracker : MonoBehaviour
     }
     private IEnumerator slamDeskDrawers()
     {
+        GameObject[] scarySound = GameObject.FindGameObjectsWithTag("ScarySound");
+        scarySound[0].GetComponent<AudioSource>().Play();
         GameObject[] Drawers = GameObject.FindGameObjectsWithTag("drawer");
         foreach (GameObject Drawer in Drawers)
         {

@@ -8,8 +8,7 @@ public class DrawerSlam : MonoBehaviour
 
     private Vector3 startPos;
     private Coroutine slamCoroutine;
-    public AudioSource audioSource;
-    public AudioClip[] sounds;
+    public AudioClip slamSound;
 
     public float minDelay = 3f;
     public float maxDelay = 10f;
@@ -24,7 +23,7 @@ public class DrawerSlam : MonoBehaviour
         if (slamCoroutine == null)
         {
             slamCoroutine = StartCoroutine(SlamRoutine());
-            slamCoroutineSounds = StartCoroutine(PlayRandomSounds());
+            // slamCoroutineSounds = StartCoroutine(PlayRandomSounds());
         }
     }
 
@@ -33,9 +32,9 @@ public class DrawerSlam : MonoBehaviour
         if (slamCoroutine != null)
         {
             StopCoroutine(slamCoroutine);
-            StopCoroutine(slamCoroutineSounds);
+            // StopCoroutine(slamCoroutineSounds);
             slamCoroutine = null;
-            slamCoroutineSounds = null;
+            // slamCoroutineSounds = null;
         }
     }
 
@@ -71,17 +70,22 @@ public class DrawerSlam : MonoBehaviour
                 yield return null;
             }
             transform.position = startPos;
+            if (GetComponent<AudioSource>())
+            {
+                GetComponent<AudioSource>().PlayOneShot(slamSound);
+            }
+
         }
     }
 
-    IEnumerator PlayRandomSounds()
-    {
-        while (true)
-        {
-            // Wait random time
-            float waitTime = Random.Range(minDelay, maxDelay);
-            yield return new WaitForSeconds(waitTime);
-            gameObject.GetComponent<AudioSource>().PlayOneShot(clip);
-        }
-    }
+    //     IEnumerator PlayRandomSounds()
+    //     {
+    //         while (true)
+    //         {
+    //             // Wait random time
+    //             float waitTime = Random.Range(minDelay, maxDelay);
+    //             yield return new WaitForSeconds(waitTime);
+    //             gameObject.GetComponent<AudioSource>().PlayOneShot(clip);
+    //         }
+    //     }
 }

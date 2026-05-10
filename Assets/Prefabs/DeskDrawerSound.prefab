@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6769447049515986132
+--- !u!1001 &952210045149036865
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.758
+      value: -0.773
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.337
+      value: 0.339
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.299
+      value: 0.296
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a671b091bf30d544f812f806e34c3285, type: 2}
     - target: {fileID: 919132149155446097, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_Name
-      value: DeskDrawer
+      value: DeskDrawerSound
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       propertyPath: m_TagString
@@ -66,23 +66,23 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3692716093581702936}
+      addedObject: {fileID: 8247757964541532178}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7635494898876629129}
+      addedObject: {fileID: 9047070064565503853}
   m_SourcePrefab: {fileID: 100100000, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
---- !u!1 &5850318750933995909 stripped
+--- !u!1 &141727239152073744 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a89b5b90a602d145ae77fff4cf41b40, type: 3}
-  m_PrefabInstance: {fileID: 6769447049515986132}
+  m_PrefabInstance: {fileID: 952210045149036865}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3692716093581702936
+--- !u!114 &8247757964541532178
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5850318750933995909}
+  m_GameObject: {fileID: 141727239152073744}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5e7c21ce3472a5f419ab837cff5a3e7b, type: 3}
@@ -94,13 +94,13 @@ MonoBehaviour:
   slamSound: {fileID: 8300000, guid: c06eb316d6da3374583df513de42b4f4, type: 3}
   minDelay: 3
   maxDelay: 10
---- !u!82 &7635494898876629129
+--- !u!82 &9047070064565503853
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5850318750933995909}
+  m_GameObject: {fileID: 141727239152073744}
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
@@ -151,7 +151,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.663
       inSlope: 0
       outSlope: 0
       tangentMode: 0

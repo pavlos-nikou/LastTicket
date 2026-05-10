@@ -13,6 +13,7 @@ TagManager:
   - PrinterSpotlight
   - drawer
   - ItLamp
+  - ScarySound
   layers:
   - Default
   - TransparentFX
