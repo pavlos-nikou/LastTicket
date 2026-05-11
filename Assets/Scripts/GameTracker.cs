@@ -71,6 +71,7 @@ public class GameTracker : MonoBehaviour
         GameObject[] Drawers = GameObject.FindGameObjectsWithTag("drawer");
         foreach (GameObject Drawer in Drawers)
         {
+            Debug.Log("Starting slam for drawer: " + Drawer.name);
             Drawer.GetComponent<DrawerSlam>().StartSlamming();
         }
         yield return null;
