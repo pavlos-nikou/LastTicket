@@ -1,5 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using System.Runtime.CompilerServices;
+
 
 public class SimpleLockPick : MonoBehaviour
 {
@@ -93,11 +96,23 @@ public class SimpleLockPick : MonoBehaviour
         progressBar.value = progress;
 
         if (progress >= 1f)
+        {
             Debug.Log("LOCK PICKED!");
+
+            StartCoroutine(WaitOnExit());
+
+        }
     }
 
     float NormalizeAngle(float angle)
     {
         return (angle > 180f) ? angle - 360f : angle;
+    }
+
+    private IEnumerator WaitOnExit()
+    {
+        yield return new WaitForSeconds(1.5f);
+        GameObject[] closeUiScript = GameObject.FindGameObjectsWithTag("KillerDrawer");
+        closeUiScript[0].GetComponent<DrawerInteract>().UnlockDrawer();
     }
 }

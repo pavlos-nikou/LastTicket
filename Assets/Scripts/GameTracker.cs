@@ -10,6 +10,9 @@ public class GameTracker : MonoBehaviour
     public float flickerDuration = 15f;
     public AudioSource printerSound;
     public GameObject printerSpotlight;
+
+
+
     //github is the worst
     private void Awake()
     {
@@ -44,8 +47,9 @@ public class GameTracker : MonoBehaviour
                 GameObject[] ItLamp = GameObject.FindGameObjectsWithTag("ItLamp");
                 GameObject[] MicrowaveLightTrigger = GameObject.FindGameObjectsWithTag("MicrowaveLightTrigger");
                 MicrowaveLightTrigger[0].GetComponent<BoxCollider>().enabled = true;
-                ItLamp[0].SetActive(false);
-
+                ItLamp[0].GetComponent<Light>().enabled = false;
+                break;
+            case "PhoneInteract":
                 break;
         }
 
@@ -85,5 +89,7 @@ public class GameTracker : MonoBehaviour
         }
         yield return null;
     }
+
+    
 }
 

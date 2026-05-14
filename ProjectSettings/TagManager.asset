@@ -15,6 +15,7 @@ TagManager:
   - ItLamp
   - ScarySound
   - MicrowaveLightTrigger
+  - KillerDrawer
   layers:
   - Default
   - TransparentFX
