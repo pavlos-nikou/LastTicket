@@ -16,6 +16,7 @@ TagManager:
   - ScarySound
   - MicrowaveLightTrigger
   - KillerDrawer
+  - Weapon
   layers:
   - Default
   - TransparentFX
