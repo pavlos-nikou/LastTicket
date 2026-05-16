@@ -50,6 +50,15 @@ public class GameTracker : MonoBehaviour
                 ItLamp[0].GetComponent<Light>().enabled = false;
                 break;
             case "PhoneInteract":
+                GameObject[] k_drawer = GameObject.FindGameObjectsWithTag("KillerDrawer");
+                k_drawer[0].GetComponent<BoxCollider>().enabled = true;
+                break;
+            case "LockpickSuccess":
+                GameObject[] k_drawer2 = GameObject.FindGameObjectsWithTag("KillerDrawer");
+                k_drawer2[0].GetComponent<BoxCollider>().enabled = false;
+                k_drawer2[0].GetComponent<DrawerInteract>().enabled = false;
+                GameObject[] ram = GameObject.FindGameObjectsWithTag("Weapon");
+                ram[0].GetComponent<BoxCollider>().enabled = true;
                 break;
         }
 

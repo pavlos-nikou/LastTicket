@@ -113,6 +113,8 @@ public class SimpleLockPick : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         GameObject[] closeUiScript = GameObject.FindGameObjectsWithTag("KillerDrawer");
+        GameTracker.Instance.SendMessageToStory("LockpickSuccess");
         closeUiScript[0].GetComponent<DrawerInteract>().UnlockDrawer();
+
     }
 }

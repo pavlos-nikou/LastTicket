@@ -75,7 +75,7 @@ public class PhoneInteract : MonoBehaviour
 
         PhoneScreen.SetActive(false);
         HealthApp.SetActive(true);
-
+        GameTracker.Instance.SendMessageToStory("PhoneInteract");
     }
 
     // walk up to the computer text apears
