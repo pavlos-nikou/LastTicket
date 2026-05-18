@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class GameTracker : MonoBehaviour
@@ -28,6 +27,7 @@ public class GameTracker : MonoBehaviour
     public void SendMessageToStory(string message)
     {
         Debug.Log("Story Message: " + message);
+        ;
         switch (message)
         {
             case "VictimCompLogin":
@@ -42,6 +42,10 @@ public class GameTracker : MonoBehaviour
                 KillerComputer[0].GetComponent<BoxCollider>().enabled = true;
                 break;
             case "KillerCompInteractExit":
+                GameObject MicrowaveDoorTriggerZone = GameObject.Find("TriggerZone");
+                MicrowaveDoorTriggerZone.GetComponent<BoxCollider>().enabled = true;
+                GameObject Phone = GameObject.Find("VictimPhone");
+                Phone.GetComponent<BoxCollider>().enabled = true;
                 GameObject[] Microwave = GameObject.FindGameObjectsWithTag("Microwave");
                 Microwave[0].GetComponent<AudioSource>().Play();
                 GameObject[] ItLamp = GameObject.FindGameObjectsWithTag("ItLamp");
@@ -59,6 +63,9 @@ public class GameTracker : MonoBehaviour
                 k_drawer2[0].GetComponent<DrawerInteract>().enabled = false;
                 GameObject[] ram = GameObject.FindGameObjectsWithTag("Weapon");
                 ram[0].GetComponent<BoxCollider>().enabled = true;
+                break;
+            case "WeaponPickup":
+                StartCoroutine(SpawnBody());
                 break;
         }
 
@@ -99,6 +106,17 @@ public class GameTracker : MonoBehaviour
         yield return null;
     }
 
-    
+    private IEnumerator SpawnBody()
+    {
+        GameObject body = GameObject.Find("Body");
+        body.GetComponent<BoxCollider>().enabled = true;
+        body.GetComponent<Animator>().enabled = true;
+        yield return new WaitForSeconds(2.8f);
+        body.GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(1f);
+        GameObject deadBodyLight = GameObject.Find("deadBodyLight");
+        deadBodyLight.GetComponent<Light>().enabled = true;
+        deadBodyLight.GetComponent<LampFlickerNoise>().enabled = true;
+    }
 }
 

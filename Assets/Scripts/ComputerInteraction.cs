@@ -1,7 +1,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using static TerminalGame;
 
 public class ComputerInteraction : MonoBehaviour
 {

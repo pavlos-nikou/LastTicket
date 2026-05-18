@@ -78,13 +78,13 @@ public class InspectItemCamera : MonoBehaviour
         {
             Destroy(spawnedItem);
         }
-
+        GameTracker.Instance.SendMessageToStory("WeaponPickup");
         StartCoroutine(ResetInteracting());
     }
 
     IEnumerator ResetInteracting()
     {
-        yield return null; // wait one frame — pause menu misses it
+        yield return null; // wait one frame ï¿½ pause menu misses it
         PauseMenu.IsInteracting = false;
     }
 }
