@@ -1547,6 +1547,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Body
       objectReference: {fileID: 0}
+    - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7389507112651452681, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -1560,10 +1568,10 @@ PrefabInstance:
       addedObject: {fileID: 1142435351}
     - targetCorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1142435349}
+      addedObject: {fileID: 1142435350}
     - targetCorrespondingSourceObject: {fileID: 4493914613880827488, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1142435350}
+      addedObject: {fileID: 1142435349}
   m_SourcePrefab: {fileID: 100100000, guid: 6dc4cf4496348884d8ee27743ae38562, type: 3}
 --- !u!1001 &131751755
 PrefabInstance:
@@ -5059,6 +5067,7 @@ MonoBehaviour:
   flickerDuration: 15
   printerSound: {fileID: 1070723695}
   printerSpotlight: {fileID: 1823670548}
+  Body: {fileID: 1142435346}
 --- !u!1001 &345833535
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16410,7 +16419,7 @@ MonoBehaviour:
   desktopCanvas: {fileID: 96979131}
   hackingMinigame: {fileID: 0}
   passwordInput: {fileID: 810694905}
-  correctPassword: 1
+  correctPassword: ihatethisjob
   wrongPasswordText: {fileID: 1251217885}
   lamps: []
   printerSpotlight: {fileID: 0}
@@ -34878,7 +34887,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -35151,9 +35160,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5539159680153548231, guid: 21b5e1c569440aa4cbbf1d0541e1a908, type: 3}
       insertIndex: -1
       addedObject: {fileID: 582118165462136105}
-    - targetCorrespondingSourceObject: {fileID: 5539159680153548231, guid: 21b5e1c569440aa4cbbf1d0541e1a908, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 582118165462136108}
   m_SourcePrefab: {fileID: 100100000, guid: 21b5e1c569440aa4cbbf1d0541e1a908, type: 3}
 --- !u!4 &582118165462136101 stripped
 Transform:
@@ -35181,33 +35187,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 10, y: 0.0000008940697, z: 9.999999}
   m_Center: {x: 1.8453875e-14, y: -0.0000009768373, z: -0.00000011920932}
---- !u!54 &582118165462136108
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1783203716}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!1001 &965959135271142227
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37016,7 +36995,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3746337428834529658, guid: 7ee4a6bb7483a2144a41d66307c6554b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4086588567363447744, guid: 7ee4a6bb7483a2144a41d66307c6554b, type: 3}
       propertyPath: m_LocalPosition.x

@@ -9,7 +9,7 @@ public class GameTracker : MonoBehaviour
     public float flickerDuration = 15f;
     public AudioSource printerSound;
     public GameObject printerSpotlight;
-
+    public GameObject Body;
 
 
     //github is the worst
@@ -108,11 +108,11 @@ public class GameTracker : MonoBehaviour
 
     private IEnumerator SpawnBody()
     {
-        GameObject[] body = GameObject.FindGameObjectsWithTag("jeffery");
-        body[0].GetComponent<BoxCollider>().enabled = true;
-        body[0].GetComponent<Animator>().enabled = true;
+        Debug.Log("Spawning body: " + Body.name);
+        Body.GetComponent<BoxCollider>().enabled = true;
+        Body.GetComponent<Animator>().enabled = true;
         yield return new WaitForSeconds(2.8f);
-        body[0].GetComponent<AudioSource>().Play();
+        Body.GetComponent<AudioSource>().Play();
         yield return new WaitForSeconds(1f);
         GameObject deadBodyLight = GameObject.Find("deadBodyLight");
         deadBodyLight.GetComponent<Light>().enabled = true;

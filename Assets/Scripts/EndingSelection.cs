@@ -48,10 +48,8 @@ public class EndingSelection : MonoBehaviour
         Time.timeScale = 1f;
 
         if (!isOpen) return;
-
-        // Keep camera locked
-        transform.position = lockedCameraPosition;
-        transform.rotation = lockedCameraRotation;
+        GameObject playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        playerCamera.GetComponent<PlayerCam>().enabled = false;
     }
     public void CloseUI()
     {
